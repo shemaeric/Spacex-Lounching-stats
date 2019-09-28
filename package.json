@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix app",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,13 @@
   "homepage": "https://github.com/shemaeric/Spacex-Lounching-stats#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "concurrently": "^4.1.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }
